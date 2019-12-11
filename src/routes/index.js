@@ -7,6 +7,7 @@ import App from '../containers/App';
 
 //  PAGES CONTAINERS
 import HomePage from '../pages/HomePage';
+import ProductProfile from '../pages/ProductProfilePage';
 
 //
 // ROUTES
@@ -25,6 +26,7 @@ const routes = [
 
 const routesComponentMap = {
     [HOME.pathname]: HomePage,
+    [PRODUCT_PROFILE.pathname]: ProductProfile,
 };
 
 // UTILS
