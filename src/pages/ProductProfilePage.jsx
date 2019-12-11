@@ -21,8 +21,6 @@ const useStyles = makeStyles(theme => ({
 
 
 const getProductBySlug = (slug) => {
-    console.log('slug:', slug)
-    console.log('data.productsProfiles:', data.productsProfiles)
     return data.productsProfiles.find(p => p.slug === slug)
 }
 
@@ -32,8 +30,6 @@ const ProductProfile = (
 
         const { routeParams: { slug } } = props;
         const profile = getProductBySlug(slug);
-        console.log('profile:', profile)
-        console.log('data:', data)
         return (
             <div className={classes.root}>
                 <Typography variant="h5">

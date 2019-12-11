@@ -1,5 +1,6 @@
-import { products } from './whole-milk';
+import * as milk from './whole-milk';
 
 export const productsProfiles = [
-    ...products
+    ...milk.products,
+
 ]
