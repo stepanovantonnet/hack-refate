@@ -49,6 +49,21 @@ const BlockItem = (
         return (
             <Paper className={classes.blockItemPaper}>
                 <Typography variant="caption" color="primary">{type}</Typography>
+                {photo && (
+                    <div
+                        style={{
+                            width: '100%'
+                        }}
+                    >
+                        <img
+                            style={{
+                                width: '100%'
+                            }}
+                            src={`/images/${photo}`}
+                            alt=""
+                        />
+                    </div>
+                )}
                 <Typography variant="subtitle1">{title}</Typography>
                 <Typography variant="body2">{description}</Typography>
 
