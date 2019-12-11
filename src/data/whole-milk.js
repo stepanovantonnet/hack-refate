@@ -10,7 +10,7 @@ const wholeMilk = {
                 type: 'about',
                 items: [
                     {
-                        photo: '',
+                        photo: 'whole-milk.jpg',
                         title: 'Whole milk 3.7',
                         description: 'Brodowiner milk is not homogenized. That\'s why the milk framed as grandfather times. In the bottleneck, after a few days, the typical crèche is formed. This is a sign of their natural quality'
                     }
