@@ -14,13 +14,16 @@ import * as data from '../data';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: `${theme.spacing(3)}px`,
+        padding: `${theme.spacing(1)}px`,
         [theme.breakpoints.up('sm')]: {
             padding: `${theme.spacing(1)}px`
         },
     },
     paper: {
-        padding: `${theme.spacing(3)}px`,
+        padding: `${theme.spacing(1)}px`,
+        [theme.breakpoints.up('sm')]: {
+            padding: `${theme.spacing(2)}px`
+        },
     },
 
     expPanel: {
@@ -137,7 +140,7 @@ const ProductProfile = (
         const { product, manufacturing, recycle, waste_impact } = profile;
 
         return (
-            <div className={classes.root}>
+            <div>
                 {/* <Typography variant="h5">
                     ProductProfile {slug}
                 </Typography> */}
@@ -160,7 +163,7 @@ const ProductProfile = (
                     items={waste_impact}
                 />
 
-                <Paper className={classes.paper}>
+                {/* <Paper className={classes.paper}>
                     <pre
                         style={{
                             width: '100%',
@@ -169,7 +172,7 @@ const ProductProfile = (
                     >
                         {JSON.stringify(profile, null, 3)}
                     </pre>
-                </Paper>
+                </Paper> */}
 
             </div>
         );

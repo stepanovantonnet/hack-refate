@@ -11,10 +11,10 @@ import theme from '../theme/index';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: `${theme.spacing(3)}px`,
+        /* padding: `${theme.spacing(3)}px`,
         [theme.breakpoints.up('sm')]: {
             padding: `${theme.spacing(1)}px`
-        },
+        }, */
     },
 }));
 
