@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/CloseOutlined';
+import WasteScoreExtended from '../components/WasteScoreExtended';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -31,7 +32,8 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: '#c0c0c0',
         //margin: theme.spacing(2, 2),
         padding: theme.spacing(2, 2),
-        transition: 'all 150ms ease-in-out'
+        transition: 'all 250ms ease-in-out',
+        marginBottom: '16px',
     },
     infoCardPaperExpanded: {
         top: '0',
@@ -89,7 +91,7 @@ const InfoCard = (
                         right: '10px',
                     }}
                 >
-                    <Fade in={expanded} timeout={300}>
+                    <Fade in={expanded} timeout={500}>
                         <IconButton
                             color="inherit"
                             onClick={handleClose}
@@ -100,7 +102,11 @@ const InfoCard = (
                 </div>
                 <div>
                     {summaryInfo}
-                    {expanded && expandedInfo}
+                    {expanded && (
+                        <Fade in={expanded} timeout={1000}>
+                            {expandedInfo}
+                        </Fade>
+                    )}
                 </div>
             </Paper>
         );
@@ -134,7 +140,9 @@ const HomePage = (
                         <div>
                             <Typography variant="subtitle1">Waste</Typography>
                         </div>
-                        <Typography variant="subtitle1">Waste  Expanded</Typography>
+                        <div>
+                            <WasteScoreExtended />
+                        </div>
                     </InfoCard>
                 </div>
             </div>

@@ -108,6 +108,11 @@ const wholeMilk = {
                 description: 'recycled as plastics or recovered as energy by incineration'
             },
 
+
+            {
+                score:3, //1,2,3
+                description: 'recycled as plastics or recovered as energy by incineration'
+            }
         ]
     }
 }
