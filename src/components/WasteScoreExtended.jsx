@@ -27,22 +27,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function getSteps() {
-    return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+    return ['Compostable', 'Medium', 'Non-Compostable'];
 }
 
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`;
+            return `Up to 5 years: Cotton. Rope. `;
         case 1:
-            return 'An ad group contains one or more ads which target a shared set of keywords.';
+            return '6-45 years: Milk Packet (tetra), Nylon Clothes, Leather Shoes.';
         case 2:
-            return `Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.`;
+            return `46-1,000,000 years: Plastic Bag, Children Diapers, Glass Bottles.`;
         default:
             return 'Unknown step';
     }
@@ -77,37 +72,10 @@ const WasteScoreExtended = (
                             <StepLabel>{label}</StepLabel>
                             <StepContent>
                                 <Typography>{getStepContent(index)}</Typography>
-                                <div className={classes.actionsContainer}>
-                                    <div>
-                                        <Button
-                                            disabled={activeStep === 0}
-                                            onClick={handleBack}
-                                            className={classes.button}
-                                        >
-                                            Back
-                          </Button>
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            onClick={handleNext}
-                                            className={classes.button}
-                                        >
-                                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                                        </Button>
-                                    </div>
-                                </div>
                             </StepContent>
                         </Step>
                     ))}
                 </Stepper>
-                {activeStep === steps.length && (
-                    <Paper square elevation={0} className={classes.resetContainer}>
-                        <Typography>All steps completed - you&apos;re finished</Typography>
-                        <Button onClick={handleReset} className={classes.button}>
-                            Reset
-                    </Button>
-                    </Paper>
-                )}
             </div>
         );
     }
