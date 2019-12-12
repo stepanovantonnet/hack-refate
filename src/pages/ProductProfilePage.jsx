@@ -256,7 +256,7 @@ const ProductProfile = (
                         <div>
                             <WasteBadge
                                 score={2}
-                                label={'separated'}
+                                label={'Separated'}
                             />
                         </div>
 
