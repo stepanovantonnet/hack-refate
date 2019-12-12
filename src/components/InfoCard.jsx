@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     infoCardPaper: {
         position: 'relative',
         height: '150px',
+        overflow:'auto',
         width: '90vw',
         left: '5vw',
         //backgroundColor: '#c0c0c0',

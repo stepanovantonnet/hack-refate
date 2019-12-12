@@ -27,6 +27,7 @@ const HomePage = (
     function (props) { //  eslint-disable-line no-unused-vars
         const classes = useStyles();
 
+
         return (
             <div className={classes.root}>
                 <div className={classes.cardsContainer}>

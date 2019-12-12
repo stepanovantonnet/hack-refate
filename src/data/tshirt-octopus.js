@@ -28,7 +28,6 @@ const product = {
                     }
                 ]
             },
-
         ],
 
         manufacturing: [
@@ -68,10 +67,19 @@ const product = {
 
         recycle: [
             {
-                type: 'processing',
+                photo: '',
+                type: '1. Collection',
+                description: " It is necessary that every plastic item is separated according to its make and type so that it can be processed accordingly in the shredding machine.",
             },
             {
-                type: 'manufacturing',
+                photo: '',
+                type: '2. Processing',
+                description: 'Once the sorting has been done, the plastic waste needs to be washed properly to remove impurities such as labels and adhesives. This enhances the quality of the finished product.After washing, the plastic waste is loaded into different conveyer belts that run the waste through the different shredders. These shredders tear up the plastic into small pellets, preparing them for recycling into other products.',
+            },
+            {
+                photo: '',
+                type: '3. Manufacturing',
+                description: 'Plastic trimmings, offcuts and skeletal waste produced as by-products of the thermoforming process can be cumbersome and a drain on resource for those firms granulating in-house, while redundant stock of plastic trays, tubs and pots can take up valuable space, while failing to provide a return.',
             },
         ],
 
@@ -83,8 +91,8 @@ const product = {
             },
             {
                 type: 'waste_score',
-                title: '3',
-                description: ''
+                title: 3,
+                description: 'Compostable'
             },
 
         ]

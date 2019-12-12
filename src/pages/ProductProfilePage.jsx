@@ -10,6 +10,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
 import * as data from '../data';
+import InfoCard from '../components/InfoCard';
+import WasteBadge from '../components/WasteBadge';
+import WasteScoreExtended from '../components/WasteScoreExtended';
 
 
 const useStyles = makeStyles(theme => ({
@@ -19,6 +22,15 @@ const useStyles = makeStyles(theme => ({
             padding: `${theme.spacing(1)}px`
         },
     },
+
+    cardsContainer: {
+        position: 'absolute',
+        top: '5vh',
+        bottom: 0,
+        left: 0,
+        right: 0
+    },
+
     paper: {
         padding: `${theme.spacing(1)}px`,
         [theme.breakpoints.up('sm')]: {
@@ -139,42 +151,156 @@ const ProductProfile = (
 
         const { product, manufacturing, recycle, waste_impact } = profile;
 
+
+
+        const [about, company] = product
+        const [location, components, packaging] = manufacturing
+        const [decomposition, waste_score] = waste_impact
+
         return (
             <div>
-                {/* <Typography variant="h5">
-                    ProductProfile {slug}
-                </Typography> */}
-
-                <Block
-                    title={'Product'}
-                    expanded
-                    items={product}
-                />
-                <Block
-                    title={'Manufacturing'}
-                    items={manufacturing}
-                />
-                <Block
-                    title={'Recycle'}
-                    items={recycle}
-                />
-                <Block
-                    title={'Waste impact'}
-                    items={waste_impact}
-                />
-
-                {/* <Paper className={classes.paper}>
-                    <pre
-                        style={{
-                            width: '100%',
-                            whiteSpace: 'pre-wrap'
-                        }}
+                <div className={classes.cardsContainer}>
+                    <InfoCard
+                        label={'Product'}
                     >
-                        {JSON.stringify(profile, null, 3)}
-                    </pre>
-                </Paper> */}
+                        <div>
+                            <Typography variant="subtitle1">
+                                {about.items[0].title}
+                            </Typography>
+                        </div>
+                        <div>
+                            <div
+                                style={{
+                                    width: '100%'
+                                }}
+                            >
+                                <img
+                                    style={{
+                                        width: '100%'
+                                    }}
+                                    src={`/images/${about.items[0].photo}`}
+                                    alt=""
+                                />
+                            </div>
+                            <Typography variant="body2">
+                                {about.items[0].description}
+                            </Typography>
+                            <br />
+                            <Typography variant="subtitle1">
+                                {company.items[0].title}
+                            </Typography>
+                            <Typography variant="body2">
+                                {company.items[0].description}
+                            </Typography>
+                        </div>
+                    </InfoCard>
 
-            </div>
+                    <InfoCard
+                        label={'Manufacturing'}
+                    >
+                        <div>
+                            <WasteBadge
+                                score={2}
+                                label={'Manufacturing'}
+                            />
+                        </div>
+
+                        <div>
+                            <div
+                                style={{
+                                    width: '100%'
+                                }}
+                            >
+                                <img
+                                    style={{
+                                        width: '100%'
+                                    }}
+                                    src={`/images/${components.items[0].photo}`}
+                                    alt=""
+                                />
+                            </div>
+                            <Typography variant="subtitle1">
+                                {components.items[0].title}
+                            </Typography>
+                            <Typography variant="body2">
+                                {components.items[0].description}
+                            </Typography>
+                        </div>
+                        <div>
+                            <div
+                                style={{
+                                    width: '100%'
+                                }}
+                            >
+                                <img
+                                    style={{
+                                        width: '100%'
+                                    }}
+                                    src={`/images/${packaging.items[0].photo}`}
+                                    alt=""
+                                />
+                            </div>
+                            <Typography variant="subtitle1">
+                                {packaging.items[0].title}
+                            </Typography>
+                            <Typography variant="body2">
+                                {packaging.items[0].description}
+                            </Typography>
+                        </div>
+
+                    </InfoCard>
+
+                    <InfoCard
+                        label={'Recycling'}
+                    >
+                        <div>
+                            <WasteBadge
+                                score={2}
+                                label={'separated'}
+                            />
+                        </div>
+
+                        <div>
+                            <Typography variant="subtitle1">
+                                {recycle[0].type}
+                            </Typography>
+                            <Typography variant="body2">
+                                {recycle[0].description}
+                            </Typography>
+                            <br />
+                            <Typography variant="subtitle1">
+                                {recycle[1].type}
+                            </Typography>
+                            <Typography variant="body2">
+                                {recycle[1].description}
+                            </Typography>
+                            <br />
+                            <Typography variant="subtitle1">
+                                {recycle[2].type}
+                            </Typography>
+                            <Typography variant="body2">
+                                {recycle[2].description}
+                            </Typography>
+                        </div>
+                    </InfoCard>
+
+                    <InfoCard
+                        label={'Waste impact'}
+                    >
+                        <div>
+                            <WasteBadge
+                                score={waste_score.title}
+                                label={waste_score.description}
+                            />
+                        </div>
+                        <div>
+                            <WasteScoreExtended
+                                score={waste_score.title}
+                            />
+                        </div>
+                    </InfoCard>
+                </div>
+            </div >
         );
     }
 )
