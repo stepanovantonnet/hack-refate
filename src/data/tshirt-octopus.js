@@ -68,12 +68,6 @@ const product = {
 
         recycle: [
             {
-                type: 'collection',
-            },
-            {
-                type: 'sorting',
-            },
-            {
                 type: 'processing',
             },
             {
@@ -84,12 +78,12 @@ const product = {
         waste_impact: [
             {
                 type: 'decomposition',
-                title: 'pastic 20,000 ',
+                title: '1-5 months',
                 description: ''
             },
             {
                 type: 'waste_score',
-                title: 'pastic 20,000 ',
+                title: '3',
                 description: ''
             },
 
