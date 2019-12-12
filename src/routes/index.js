@@ -8,6 +8,7 @@ import App from '../containers/App';
 //  PAGES CONTAINERS
 import HomePage from '../pages/HomePage';
 import ProductProfile from '../pages/ProductProfilePage';
+import AddProductPage from '../pages/AddProductPage';
 
 //
 // ROUTES
@@ -17,16 +18,19 @@ const createRoute = (path, routeConfig) => ({ pathname: `${path}`, ...routeConfi
 
 const HOME = createRoute('/');
 const PRODUCT_PROFILE = createRoute('/product/:slug');
+const ADD = createRoute('/add');
 
 const routes = [
     HOME,
-    PRODUCT_PROFILE
+    PRODUCT_PROFILE,
+    ADD
 ];
 
 
 const routesComponentMap = {
     [HOME.pathname]: HomePage,
     [PRODUCT_PROFILE.pathname]: ProductProfile,
+    [ADD.pathname]: AddProductPage
 };
 
 // UTILS

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
+
+import { withRouter } from 'react-router-dom'
+
 // MATERIAL UI
 import { makeStyles, Paper, Fade } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
@@ -9,72 +12,73 @@ import CloseIcon from '@material-ui/icons/CloseOutlined';
 import WasteScoreExtended from '../components/WasteScoreExtended';
 import WasteBadge from '../components/WasteBadge';
 import InfoCard from '../components/InfoCard';
+import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        //padding: `${theme.spacing(2)}px`,
-        position: 'relative',
+        padding: `${theme.spacing(3)}px`,
+        display: "flex",
+        flexDirection: 'column'
         /*[theme.breakpoints.up('sm')]: {
             padding: `${theme.spacing(1)}px`
         }, */
+    },
+    fab: {
+        position: 'absolute',
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
     },
 }));
 
 
 
-
-const HomePage = (
+const HomePage = withRouter(
     function (props) { //  eslint-disable-line no-unused-vars
         const classes = useStyles();
+        const { history } = props;
+
+
+
+        const fab =
+        {
+            color: 'primary',
+            className: classes.fab,
+            icon: <AddIcon />,
+            label: 'Add',
+        }
 
 
         return (
             <div className={classes.root}>
-                <div className={classes.cardsContainer}>
-                    <InfoCard
-                        label={'Product'}
-                    >
-                        <Typography variant="subtitle1">Product summary</Typography>
-                        <Typography variant="subtitle1">Product Expanded</Typography>
-                    </InfoCard>
+                <Typography>Links</Typography>
+                <Button
+                    variant="outlined"
+                    onClick={() => {
+                        history.push('/product/tshirt-octopus')
+                    }}
+                >
+                    T-shirt
+                </Button>
+                <Button
+                    variant="outlined"
+                    onClick={() => {
+                        history.push('/product/whole-milk')
+                    }}
+                >
+                    Whole milk
+                </Button>
 
-                    <InfoCard
-                        label={'Manufacturing'}
-                    >
-                        <Typography variant="subtitle1">Manufacturing summary</Typography>
-                        <Typography variant="subtitle1">Manufacturing  Expanded</Typography>
-                    </InfoCard>
-                    <InfoCard
-                        label={'Recycling'}
-                    >
-                        <Typography variant="subtitle1">Recycling summary</Typography>
-                        <Typography variant="subtitle1">Recycling  Expanded</Typography>
-                    </InfoCard>
-
-                    <InfoCard
-                        label={'Waste impact'}
-                    >
-                        <div>
-                            <WasteBadge
-                                score={1}
-                                label={'Compostable'}
-                            />
-                            {/* <WasteBadge
-                                score={2}
-                                label={'recyclable'}
-                            />
-                            <WasteBadge
-                                score={3}
-                                label={'non-recyclable'}
-                            /> */}
-                        </div>
-                        <div>
-                            <WasteScoreExtended
-                                score={1}
-                            />
-                        </div>
-                    </InfoCard>
-                </div>
+                <Fab
+                    className={fab.className}
+                    color={fab.color}
+                    onClick={() => {
+                        history.push('/add')
+                    }}
+                >
+                    {fab.icon}
+                </Fab>
             </div>
         );
     }

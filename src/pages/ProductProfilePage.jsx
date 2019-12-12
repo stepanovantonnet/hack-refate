@@ -205,7 +205,7 @@ const ProductProfile = (
                             />
                         </div>
 
-                        <div>
+                        {components && <div>
                             <div
                                 style={{
                                     width: '100%'
@@ -225,8 +225,8 @@ const ProductProfile = (
                             <Typography variant="body2">
                                 {components.items[0].description}
                             </Typography>
-                        </div>
-                        <div>
+                        </div>}
+                        {packaging && (<div>
                             <div
                                 style={{
                                     width: '100%'
@@ -246,7 +246,7 @@ const ProductProfile = (
                             <Typography variant="body2">
                                 {packaging.items[0].description}
                             </Typography>
-                        </div>
+                        </div>)}
 
                     </InfoCard>
 
