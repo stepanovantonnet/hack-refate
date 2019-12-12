@@ -219,7 +219,7 @@ const ProductProfile = (
                             />
                         </div>
 
-                        {components && <div>
+                        {components.items && components && <div>
                             <div
                                 style={{
                                     width: '100%'

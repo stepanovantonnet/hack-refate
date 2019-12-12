@@ -46,9 +46,12 @@ const wholeMilk = {
                 type: 'components',
                 items: [
                     {
-                        photo: '',
-                        title: '',
-                        description: ''
+                        photo: 'milk_package.jpg',
+                        title: 'Ecolean Air',
+                        description: 'Consists of part plastic part calcium carbonate (chalk), one of nature’s own materials. No chemical processes are necessary to extract the chalk and only limited energy is required in the production. The package consists of up to 35% (by weight) of calcium carbonate and it provides strength and stiffness as well as whiteness to the package. After disposal the package can either be material recycled as plastics or recovered as energy by incineration. \n calcium carbonate filled polypropylene can generate a Green House Gas savings of approximately 23% - and this is before taking into consideration the increased productivity mentioned.',
+                        link: [
+                            'https://www.ecolean.com'
+                        ]
                     }
                 ]
             },

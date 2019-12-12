@@ -51,17 +51,7 @@ const product = {
                         description: 'Cotton is a natural, renewable and biodegradable fibre, popular in clothing, home textiles and furniture. But it’s also linked to negative impacts on the people and the environment, it’s a climate intensive crop related to high water and chemical use, that affects both soil and biodiversity and the people working in the cotton fields.'
                     }
                 ]
-            },
-            {
-                type: 'labor',
-                items: [
-                    {
-                        photo: '',
-                        title: '',
-                        description: ''
-                    }
-                ]
-            },
+            }
         ],
 
 
