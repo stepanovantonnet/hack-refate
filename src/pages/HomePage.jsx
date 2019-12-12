@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/CloseOutlined';
 import WasteScoreExtended from '../components/WasteScoreExtended';
+import WasteBadge from '../components/WasteBadge';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles(theme => ({
         height: '150px',
         width: '90vw',
         left: '5vw',
-        backgroundColor: '#c0c0c0',
+        //backgroundColor: '#c0c0c0',
         //margin: theme.spacing(2, 2),
         padding: theme.spacing(2, 2),
         transition: 'all 250ms ease-in-out',
@@ -38,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     infoCardPaperExpanded: {
         top: '0',
         position: 'fixed',
-        backgroundColor: '#fff',
+        //backgroundColor: '#fff',
         height: '100vh',
         width: '100vw',
         left: 0,
@@ -53,7 +54,7 @@ const InfoCard = (
     function (props) { //  eslint-disable-line no-unused-vars
         const classes = useStyles();
 
-        const { children } = props
+        const { children, label } = props
 
         const [expanded, setExpanded] = useState(false)
         console.log('expanded:', expanded)
@@ -101,6 +102,7 @@ const InfoCard = (
                     </Fade>
                 </div>
                 <div>
+                    <Typography variant="caption">{label}</Typography>
                     {summaryInfo}
                     {expanded && (
                         <Fade in={expanded} timeout={1000}>
@@ -136,9 +138,22 @@ const HomePage = (
                         <Typography variant="subtitle1">Recycling  Expanded</Typography>
                     </InfoCard>
 
-                    <InfoCard>
+                    <InfoCard
+                        label={'Waste impact'}
+                    >
                         <div>
-                            <Typography variant="subtitle1">Waste</Typography>
+                            <WasteBadge
+                                score={1}
+                                label={'decomposable'}
+                            />
+                            {/* <WasteBadge
+                                score={2}
+                                label={'recyclable'}
+                            />
+                            <WasteBadge
+                                score={3}
+                                label={'non-recyclable'}
+                            /> */}
                         </div>
                         <div>
                             <WasteScoreExtended />
