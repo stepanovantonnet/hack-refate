@@ -69,9 +69,6 @@ const WasteScoreExtended = (
 
         return (
             <div className={classes.root}>
-                <Typography variant="body2">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate porro eius inventore dolorem quasi impedit, dignissimos blanditiis.
-                </Typography>
                 <Stepper
                     activeStep={score} orientation="vertical"
                     style={{
