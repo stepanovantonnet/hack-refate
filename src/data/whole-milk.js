@@ -104,8 +104,9 @@ const wholeMilk = {
             },
 
             {
-                score:3, //1,2,3
-                description: 'recyclable'
+                type: 'waste_score',
+                title: 3,
+                description: 'Non-compostable'
             }
         ]
     }

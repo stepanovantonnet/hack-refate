@@ -91,7 +91,7 @@ const product = {
             },
             {
                 type: 'waste_score',
-                title: 3,
+                title: 1,
                 description: 'Compostable'
             },
 
