@@ -124,17 +124,23 @@ const HomePage = (
         return (
             <div className={classes.root}>
                 <div className={classes.cardsContainer}>
-                    <InfoCard>
-                        <Typography variant="subtitle1">Product</Typography>
+                    <InfoCard
+                        label={'Product'}
+                    >
+                        <Typography variant="subtitle1">Product summary</Typography>
                         <Typography variant="subtitle1">Product Expanded</Typography>
                     </InfoCard>
 
-                    <InfoCard>
-                        <Typography variant="subtitle1">Manufacturing</Typography>
+                    <InfoCard
+                        label={'Manufacturing'}
+                    >
+                        <Typography variant="subtitle1">Manufacturing summary</Typography>
                         <Typography variant="subtitle1">Manufacturing  Expanded</Typography>
                     </InfoCard>
-                    <InfoCard>
-                        <Typography variant="subtitle1">Recycling</Typography>
+                    <InfoCard
+                        label={'Recycling'}
+                    >
+                        <Typography variant="subtitle1">Recycling summary</Typography>
                         <Typography variant="subtitle1">Recycling  Expanded</Typography>
                     </InfoCard>
 
@@ -144,7 +150,7 @@ const HomePage = (
                         <div>
                             <WasteBadge
                                 score={1}
-                                label={'decomposable'}
+                                label={'Compostable'}
                             />
                             {/* <WasteBadge
                                 score={2}
@@ -156,7 +162,9 @@ const HomePage = (
                             /> */}
                         </div>
                         <div>
-                            <WasteScoreExtended />
+                            <WasteScoreExtended
+                                score={1}
+                            />
                         </div>
                     </InfoCard>
                 </div>

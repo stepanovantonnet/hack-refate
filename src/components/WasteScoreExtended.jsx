@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
+        marginTop: '24px'
     },
     button: {
         marginTop: theme.spacing(1),
@@ -47,9 +48,9 @@ const WasteScoreExtended = (
     function (props) { //  eslint-disable-line no-unused-vars
         const classes = useStyles();
 
-        const [activeStep, setActiveStep] = React.useState(0);
+        //const [activeStep, setActiveStep] = React.useState(0);
         const steps = getSteps();
-
+/* 
         const handleNext = () => {
             setActiveStep(prevActiveStep => prevActiveStep + 1);
         };
@@ -60,19 +61,29 @@ const WasteScoreExtended = (
 
         const handleReset = () => {
             setActiveStep(0);
-        };
+        }; */
 
+
+        const { score } = props;
 
 
         return (
             <div className={classes.root}>
-                <Stepper activeStep={activeStep} orientation="vertical">
+                <Typography variant="body2">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate porro eius inventore dolorem quasi impedit, dignissimos blanditiis.
+                </Typography>
+                <Stepper
+                    activeStep={score} orientation="vertical"
+                    style={{
+                        padding: '24px 0px'
+                    }}
+                >
                     {steps.map((label, index) => (
                         <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
-                            <StepContent>
+                            <StepLabel>
+                                <Typography variant="h6">{label}</Typography>
                                 <Typography>{getStepContent(index)}</Typography>
-                            </StepContent>
+                            </StepLabel>
                         </Step>
                     ))}
                 </Stepper>
