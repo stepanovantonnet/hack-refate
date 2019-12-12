@@ -52,9 +52,12 @@ const HomePage = withRouter(
 
         return (
             <div className={classes.root}>
-                <Typography>Links</Typography>
+                <Typography variant="h6">Links</Typography>
                 <Button
                     variant="outlined"
+                    style={{
+                        marginBottom: '24px'
+                    }}
                     onClick={() => {
                         history.push('/product/tshirt-octopus')
                     }}

@@ -18,8 +18,10 @@ const useStyles = makeStyles(theme => ({
     fab: {
         position: 'absolute',
         bottom: theme.spacing(2),
-        right: theme.spacing(2),
-        left: theme.spacing(2),
+        transform: 'translateX(-50%)',
+        left: '50%',
+        //right: theme.spacing(2),
+        //left: theme.spacing(2),
     },
 }));
 
@@ -49,10 +51,10 @@ const AddProductPage = withRouter(
                         style={{
                             width: '100%',
                             height: '100%',
-                            objectFit:'cover'
-                            
+                            objectFit: 'cover'
+
                         }}
-                        src={`/images/grocery-store-1.jpg`}
+                        src={`/images/grocery-store-2.jpg`}
                         alt=""
                     />
                 </div>

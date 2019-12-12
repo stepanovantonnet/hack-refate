@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // MATERIAL UI
-import { makeStyles, Paper } from '@material-ui/core'
+import { makeStyles, Paper, Avatar } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -164,6 +164,20 @@ const ProductProfile = (
                         label={'Product'}
                     >
                         <div>
+                                <Avatar
+                                    style={{
+                                        width: 80,
+                                        height: 80,
+                                    }}
+                                >
+                                    <img
+                                        style={{
+                                            width: '100%'
+                                        }}
+                                        src={`/images/${about.items[0].photo}`}
+                                        alt=""
+                                    />
+                                </Avatar>
                             <Typography variant="subtitle1">
                                 {about.items[0].title}
                             </Typography>
